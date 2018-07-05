@@ -10,9 +10,15 @@
 	switch($requestUri) {
 
 		case "/":
-			echo "Hello from Big Bubble world!";
+			$message = "Hello from Big Bubble world!";
+			include(TEMPLATE_DIR . "home.php");
+			header("Refresh: 2; Url=/signup");
 			break;
-	
+
+		case "/signup":
+			include(TEMPLATE_DIR . "signup.php");
+			break;
+
 		default:
 			include("404.html");
 	
